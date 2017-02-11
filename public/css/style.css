@@ -19,10 +19,170 @@ html body {
 	margin:0;
 	font-size: 100%;
 }
-
 p,span,a,ul,ol,li,h1,h2,h3,h4,h5,h6 {
 	font-size: 1rem;
 	font-family: 'Open Sans', sans-serif;
 	text-decoration: none;
 	list-style: none;
+	margin:0;
+	padding:0;
 }
+
+
+/* GLOBAL STYLES */
+/*
+Font Colors
+*/
+.black_font {
+	color: rgba(34, 34, 34, 1);
+}
+.blue_font {
+	color: rgba(48, 132, 180, 1);
+}
+.grey_font {
+	color: rgba(211, 211, 211, 1);
+}
+.light_grey_font {
+	color: rgba(238, 238, 238, 1);
+}
+.white_font {
+	color: rgba(255, 255, 255, 1);
+}
+/*
+Fill Colors
+*/
+.black_fill {
+	background-color: rgba(34, 34, 34, 1);
+}
+.blue_fill {
+	background-color: rgba(48, 132, 180, 0.9);
+}
+.grey_fill {
+	background-color: rgba(211, 211, 211, 1);
+}
+.light_grey_fill {
+	background-color: rgba(238, 238, 238, 1);
+}
+.white_fill {
+	background-color: rgba(255, 255, 255, 1);
+}
+/*
+Letter Case
+*/
+.uppercase {
+	text-transform: uppercase;
+}
+/*
+Body & Section
+*/
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 1);
+}
+section {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+
+/* HOME SECTION */
+#home_container {
+	background-image: url("http://www.skylinetradeshowtips.com/wp-content/uploads/2015/11/emailcampaign.jpg");
+	background-size: cover;
+}
+#home_rec_0 {
+	width: 50%;
+	height: 2.5%;
+	position: absolute;
+	left:0;
+	align-self: flex-end;
+}
+#home_rec_1 {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	display: flex;
+	align-items: center;
+}
+#home_banner {
+	width: 75%;
+	height: 33%;
+	position: inherit;
+	left: -7.3rem;
+	display: flex;
+	border: 0.35rem solid rgba(255, 255, 255, 1);
+	font-family: 'Raleway', sans-serif;
+}
+#home_banner_div_0 {
+	opacity: 0.5;
+	width: 7rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#home_banner h3 {
+	position: absolute;
+	font-family: inherit;
+	transform: rotate(-90deg);
+}
+#home_banner_div_1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 12%;
+	margin-top: -3rem;
+}
+#home_banner h2 {
+	font-family: inherit;
+	font-size: 1.8rem;
+	font-weight: 100;
+}
+#home_banner span {
+	font-family: inherit;
+	font-size: 2.8rem;
+	font-weight: 900;
+}
+#home_banner a {
+	margin-top: 5rem;
+	position: absolute;
+	border: 0.15rem solid white;
+	border-radius: 2rem;
+	padding: 0.35rem .8rem;
+	font-family: inherit;
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+#home_banner a:hover {
+	color: rgba(48, 132, 180, 1);
+	background-color: white;
+	font-weight: 900;
+}
+#mouse_icon {
+	position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
