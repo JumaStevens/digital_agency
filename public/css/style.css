@@ -37,13 +37,13 @@ Font Colors
 	color: rgba(34, 34, 34, 1);
 }
 .blue_font {
-	color: rgba(48, 132, 180, 1);
+	color: rgba(47, 128, 182, 1);
 }
 .grey_font {
-	color: rgba(211, 211, 211, 1);
+	color: rgba(143, 143, 143, 1);
 }
 .light_grey_font {
-	color: rgba(238, 238, 238, 1);
+	color: rgba(246, 246, 248, 1);
 }
 .white_font {
 	color: rgba(255, 255, 255, 1);
@@ -55,16 +55,35 @@ Fill Colors
 	background-color: rgba(34, 34, 34, 1);
 }
 .blue_fill {
-	background-color: rgba(48, 132, 180, 0.9);
+	background-color: rgba(47, 128, 182, 0.9);
 }
 .grey_fill {
-	background-color: rgba(211, 211, 211, 1);
+	background-color: rgba(246, 246, 246, 1);
 }
 .light_grey_fill {
-	background-color: rgba(238, 238, 238, 1);
+	background-color: rgba(250, 250, 250, 1);
 }
 .white_fill {
 	background-color: rgba(255, 255, 255, 1);
+}
+/*
+Font Sizes
+*/
+.title_font {
+	font-family: 'Raleway', sans-serif;
+	font-size: 2.8rem;
+	font-weight: 900;
+}
+.large_font_size {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.8rem;
+	font-weight: 100;
+}
+.medium_font_size {
+	font-size: 1rem;
+}
+.small_font_size {
+	font-size: 0.8rem;
 }
 /*
 Letter Case
@@ -78,17 +97,23 @@ Body & Section
 body {
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(255, 255, 255, 1);
 }
 section {
 	width: 100%;
-	height: 100%;
+	display: flex;
+}
+/*
+Image Containers
+*/
+.img_container {
+	position: relative;
 	display: flex;
 }
 
 
 /* HOME SECTION */
 #home_container {
+	height: 100%;
 	background-image: url("http://www.skylinetradeshowtips.com/wp-content/uploads/2015/11/emailcampaign.jpg");
 	background-size: cover;
 }
@@ -137,25 +162,20 @@ section {
 }
 #home_banner h2 {
 	font-family: inherit;
-	font-size: 1.8rem;
-	font-weight: 100;
 }
 #home_banner span {
 	font-family: inherit;
-	font-size: 2.8rem;
-	font-weight: 900;
 }
-#home_banner a {
+#home_banner button {
 	margin-top: 5rem;
 	position: absolute;
 	border: 0.15rem solid white;
 	border-radius: 2rem;
 	padding: 0.35rem .8rem;
 	font-family: inherit;
-	font-size: 0.8rem;
 	font-weight: 700;
 }
-#home_banner a:hover {
+#home_banner button:hover {
 	color: rgba(48, 132, 180, 1);
 	background-color: white;
 	font-weight: 900;
@@ -167,6 +187,72 @@ section {
 
 
 
+/* ABOUT SECTION */
+#about_container {
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+#about_wrapper {
+	width: 65%;
+	margin: 6rem 0;
+	display: inherit;
+	justify-content: space-between;
+	align-items: center;
+}
+#about_text {
+	width: 28rem;
+}
+#about_images {
+	width: 28rem;
+}
+#about_images img {
+	width: 100%;
+	height: 12rem;
+}
+#about_img_0 {
+	margin-bottom: 1.5rem;
+}
+#about_rec_0 {
+	width: 1.5rem;
+	height: 50%;
+	position: absolute;
+	left: 100%;
+	margin-left: -1.5rem;
+	align-self: flex-start;
+}
+#about_img_1 {
+	margin-top: 1.5rem;
+}
+#about_rec_1 {
+	width: 1.5rem;
+	height: 50%;
+	position: absolute;
+	align-self: flex-end;
+}
+#about_container ul {
+	align-self: flex-end;
+	width: 100%;
+	height: 12rem;
+	display: inherit;
+	flex-wrap: wrap;
+}
+#about_container ul li {
+	flex: 1;
+	display: inherit;
+	justify-content: center;
+	align-items: center;
+}
+#about_container ul li figure {
+	width: 50%;
+	position: relative;
+}
+#about_container ul li figure canvas {
+	position: absolute;
+}
+#about_container ul li div p {
+	margin-top: 1rem;
+}
 
 
 
