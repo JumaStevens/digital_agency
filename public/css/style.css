@@ -24,6 +24,7 @@ p,span,a,ul,ol,li,h1,h2,h3,h4,h5,h6 {
 	font-family: 'Open Sans', sans-serif;
 	text-decoration: none;
 	list-style: none;
+	line-height: 100%;
 	margin:0;
 	padding:0;
 }
@@ -95,125 +96,270 @@ Letter Case
 Body & Section
 */
 body {
-	width: 100vw;
-	height: 100vh;
+
 }
 section {
-	width: 100%;
+	width: 100vw;
 	display: flex;
+}
+h3 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.8em;
+	font-weight: 100;
+	color: rgba(34, 34, 34, 1);
+}
+h3 span {
+	font-family: inherit;
+	font-size: 2.8em;
+	font-weight: 900;
+	text-transform: capitalize;
+	color: rgba(47, 128, 182, 1);
+}
+h4 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1rem;
+	font-weight: 900;
+	text-transform: uppercase;
 }
 /*
 Image Containers
 */
-.img_container {
+.img-container {
 	position: relative;
 	display: flex;
 }
 
 
 /* HOME SECTION */
-#home_container {
-	height: 100%;
+#home {
+	width: 100vw;
+	height: 100vh;
 	background-image: url("http://www.skylinetradeshowtips.com/wp-content/uploads/2015/11/emailcampaign.jpg");
 	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-#home_rec_0 {
+#home__rec-0 {
 	width: 50%;
 	height: 2.5%;
 	position: absolute;
 	left:0;
+	margin-top: 2px;
 	align-self: flex-end;
+	display: none;
 }
-#home_rec_1 {
-	width: 50%;
+#home__rec-1 {
+	width: 100%;
 	height: 100%;
 	position: absolute;
-	left: 50%;
-	display: flex;
-	align-items: center;
 }
-#home_banner {
-	width: 75%;
-	height: 33%;
-	position: inherit;
-	left: -7.3rem;
+#home article {
+	position: relative;
 	display: flex;
-	border: 0.35rem solid rgba(255, 255, 255, 1);
+	justify-content: center;
+	align-items: center;
 	font-family: 'Raleway', sans-serif;
+	letter-spacing: 0.10rem;
+	color: rgba(255, 255, 255, 1);
 }
-#home_banner_div_0 {
-	opacity: 0.5;
-	width: 7rem;
-	display: flex;
+#home article div:nth-child(1) {
+	width: 6rem;
+	height: 100%;
+	display: none;
 	justify-content: center;
 	align-items: center;
 }
-#home_banner h3 {
+#home article aside {
+	display: inherit;
 	position: absolute;
-	font-family: inherit;
+	text-transform: uppercase;
+	color: rgba(34, 34, 34, 1);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
 	transform: rotate(-90deg);
+	-webkit-transform-origin: center;
+	-moz-transform-origin: center;
+	-ms-transform-origin: center;
+	-o-transform-origin: center;
+	transform-origin: center;
 }
-#home_banner_div_1 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-left: 12%;
-	margin-top: -3rem;
-}
-#home_banner h2 {
+#home article p {
 	font-family: inherit;
+	font-size: 1.2rem;
+	font-weight: 100;
+	line-height: 150%;
+	text-transform: capitalize;
 }
-#home_banner span {
+#home article p span {
 	font-family: inherit;
-}
-#home_banner button {
-	margin-top: 5rem;
-	position: absolute;
-	border: 0.15rem solid white;
-	border-radius: 2rem;
-	padding: 0.35rem .8rem;
-	font-family: inherit;
-	font-weight: 700;
-}
-#home_banner button:hover {
-	color: rgba(48, 132, 180, 1);
-	background-color: white;
+	font-size: 2.2rem;
 	font-weight: 900;
 }
-#mouse_icon {
+#home article div:nth-child(2) div {
+	height: 1.8rem;
+	margin-top: 1rem;
+}
+#home article a {
+	position: absolute;
+	padding: 0.35rem .8rem;
+	border: 0.15rem solid rgba(255, 255, 255, 1);
+	border-radius: 2rem;
+	background-color: rgba(255, 255, 255, 1);
+	font-family: inherit;
+	font-size: 0.5rem;
+	font-weight: 700;
+	color: rgba(47, 128, 182, 1);
+	text-transform: uppercase;
+	transition-property: font-size margin-top;
+	transition-duration: 0.25s;
+}
+#home article a:hover {
+	font-size: 0.85rem;
+	margin-top: -0.0125rem;
+	margin-left: -0.1rem;
+}
+#mouse-icon {
+	display: none;
 	position: absolute;
 }
-
-
-
-
+/* HOME MEDIA QUERIES */
+@media (min-width: 325px) {
+	#home article p {
+		font-size: 1.5rem;
+	}
+	#home article p span {
+		font-size: 2.5rem;
+	}
+	#home article a {
+		font-size: 0.5rem;
+	}
+}
+@media (min-width: 420px) {
+	#home article p {
+		font-size: 1.8rem;
+	}
+	#home article p span {
+		font-size: 2.8rem;
+	}
+	#home article a {
+		font-size: 0.8rem;
+	}
+}
+@media (min-width: 1100px) {
+	#home {
+		background-image: url("http://www.skylinetradeshowtips.com/wp-content/uploads/2015/11/emailcampaign.jpg");
+	}
+	#home__rec-0 {
+		display: initial;
+	}
+	#home__rec-1 {
+		width: 50%;
+		left: 50%;
+	}
+	#home article {
+		height: 16rem;
+		margin-left: 20.2rem;
+		padding-right: 4rem;
+		border: 4px solid rgba(255,255,255,1);
+	}
+	#home article div:nth-child(1) {
+		display: flex;
+		background-color: rgba(255,255,255,0.5);
+	}
+	#home article div:nth-child(2) {
+		margin-left: 2rem;
+	}
+	#home article div:nth-child(2) div {
+		height: 1.8rem;
+		margin-left: 0rem;
+		margin-top: 1rem;
+	}
+}
 /* ABOUT SECTION */
-#about_container {
+#about {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 }
-#about_wrapper {
-	width: 65%;
-	margin: 6rem 0;
+#about__content {
+	width: 80%;
+	margin: 5rem 0;
 	display: inherit;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 }
-#about_text {
-	width: 28rem;
+#about__text h3 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.4rem;
+	font-weight: 100;
+	line-height: 150%;
+	color: rgba(34, 34, 34, 1);
 }
-#about_images {
-	width: 28rem;
+#about__text h3 span {
+	font-family: inherit;
+	font-size: 1.8rem;
+	font-weight: 900;
+	text-transform: capitalize;
+	color: rgba(47, 128, 182, 1);
 }
-#about_images img {
-	width: 100%;
-	height: 12rem;
+#about__text aside {
+	margin: 1.5rem 0 2.2rem 0;
+	line-height: 1.3rem;
 }
-#about_img_0 {
-	margin-bottom: 1.5rem;
+#about__text aside q {
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: inherit;
+	font-style: italic;
+	color: rgba(113, 113, 113, 1);
 }
-#about_rec_0 {
+#about__text aside q:before,
+#about__text aside q:after {
+	content: no-open-quote;
+	content: no-close-quote;
+}
+#about__text aside p:before {
+	content: open-quote;
+	position: relative;
+	top: .5rem;
+	font-size: 1.5rem;
+	font-weight: normal;
+	color: rgba(113, 113, 113, 1);
+}
+#about__text aside p {
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	font-weight: bolder;
+	text-transform: uppercase;
+	color: rgba(34, 34, 34, 1);
+}
+#about__text aside p span {
+	font-size: inherit;
+	color: rgba(113, 113, 113, 1);
+}
+#about__text > p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1.3rem;
+	color: rgba(143, 143, 143, 1);
+}
+#about__images {
+	display: none;
+	width: 40vw;
+	margin-left: 1.5rem;
+}
+#about__images img {
+	width: inherit;
+	height:20vw;
+}
+#about__img-0 {
+	width: inherit;
+}
+#about__rec-0 {
 	width: 1.5rem;
 	height: 50%;
 	position: absolute;
@@ -221,37 +367,82 @@ Image Containers
 	margin-left: -1.5rem;
 	align-self: flex-start;
 }
-#about_img_1 {
+#about__img-1 {
+	width: inherit;
 	margin-top: 1.5rem;
 }
-#about_rec_1 {
+#about__rec-1 {
 	width: 1.5rem;
 	height: 50%;
 	position: absolute;
 	align-self: flex-end;
 }
-#about_container ul {
+#about ul {
 	align-self: flex-end;
 	width: 100%;
-	height: 12rem;
 	display: inherit;
 	flex-wrap: wrap;
 }
-#about_container ul li {
-	flex: 1;
+#about ul li {
+	width: 100%;
+	padding: 1rem 0.7rem;
 	display: inherit;
 	justify-content: center;
 	align-items: center;
 }
-#about_container ul li figure {
-	width: 50%;
+#about ul li figure {
+	width: 4rem;
 	position: relative;
 }
-#about_container ul li figure canvas {
+#about ul li figure canvas {
 	position: absolute;
 }
-#about_container ul li div p {
-	margin-top: 1rem;
+#about ul li div h4 {
+	position: relative;
+	top: -0.4rem;
+	color: rgba(47, 128, 182, 1);
+	line-height: 1.6rem;
+}
+#about ul li div p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.8rem;
+	font-weight: normal;
+	line-height: 1.3rem;
+	color: rgba(143, 143, 143, 1);
+}
+
+
+/* ABOUT MEDIA QUERIES */
+@media (min-width: 760px) {
+	#about {
+
+	}
+	#about__content {
+		
+	}
+	#about__images {
+		display: initial;
+
+	}
+	#about ul li {
+		padding: 0;
+	}
+	#about ul li:nth-child(1) {
+		width: 50%;
+		background-color: rgba(246, 246, 246, 1);
+	}
+	#about ul li:nth-child(2) {
+		width: 50%;
+		background-color: rgba(250, 250, 250, 1);
+	}
+	#about ul li:nth-child(3) {
+		background-color: rgba(246, 246, 246, 1);
+	}
+	#about ul li div p {
+		width: 15rem;
+	}
+
+
 }
 
 
@@ -261,6 +452,15 @@ Image Containers
 
 
 
+
+
+
+
+
+
+#talents_container, #contact_container, #offers_container, #works_container, header {
+	display: none;
+}
 
 
 
