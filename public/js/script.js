@@ -13,13 +13,19 @@ var icons = {
 	//global settings
 	line_width: 2,
 	stroke_style: "rgba(34, 34, 34, 1)",
+	stroke_style_1: "rgba(255,255,255,1)",
+
 	//draw icons
 	draw: function() {
 		icons.mouse();
 		icons.gear();
 		icons.plane();
 		icons.computer();
+		icons.printer();
+		icons.paint_brush();
+		icons.camera();
 	},
+
 	//home mouse icon
 	mouse: function() {
 		//hook
@@ -51,6 +57,7 @@ var icons = {
 		ctx_1.strokeStyle = "rgba(255, 255, 255, 1)";
 		ctx_1.stroke();
 	},
+
 	//about gear icon
 	gear: function() {
 		//hook
@@ -74,6 +81,7 @@ var icons = {
 			ctx.stroke();
 		}
 	},
+
 	//about plane icon
 	plane: function() {
 		//hook
@@ -103,6 +111,7 @@ var icons = {
 		ctx.strokeStyle = icons.stroke_style;
 		ctx.stroke();
 	},
+
 	//about computer icon
 	computer: function() {
 		//hook
@@ -136,6 +145,106 @@ var icons = {
 		ctx_2.lineWidth = icons.line_width;
 		ctx_2.strokeStyle = icons.stroke_style;
 		ctx_2.stroke();
+	},
+	//offers printer icon
+	printer: function() {
+		//hook
+		const canvas = document.getElementById("printer-icon").getElementsByTagName("canvas");
+		//draw
+		for(let i=0;i<3;i++) {
+			const ctx = canvas[i].getContext("2d");
+			ctx.beginPath();
+			ctx.moveTo(2,7);
+			ctx.quadraticCurveTo(2,2,7,2);
+			ctx.lineTo(33,2);
+			ctx.quadraticCurveTo(38,2,38,7);
+			ctx.lineTo(38,23);
+			ctx.quadraticCurveTo(38,28,33,28);
+			ctx.lineTo(7,28);
+			ctx.quadraticCurveTo(2,28,2,23);
+			ctx.lineTo(2,7);
+			ctx.lineWidth = icons.line_width;
+			ctx.strokeStyle = icons.stroke_style_1;
+			ctx.stroke();
+		}
+		//draw
+		for(let i=3;i<6;i++) {
+			const ctx_lines = canvas[i].getContext("2d");
+			ctx_lines.beginPath();
+			ctx_lines.moveTo(0,0);
+			ctx_lines.lineTo(5,0);
+			ctx_lines.lineWidth = icons.line_width;
+			ctx_lines.strokeStyle = icons.stroke_style_1;
+			ctx_lines.stroke();
+		}
+	},
+	//offers paint brush icon
+	paint_brush: function() {
+		//hook
+		const canvas = document.getElementById("paint-brush-icon").getElementsByTagName("canvas");
+		//draw
+		const ctx_0 = canvas[0].getContext("2d");
+		ctx_0.beginPath();
+		ctx_0.moveTo(20,0);
+		ctx_0.bezierCurveTo(10,30,30,30,20,0);
+		ctx_0.lineWidth = icons.line_width;
+		ctx_0.strokeStyle = icons.stroke_style_1;
+		ctx_0.stroke();
+		//draw
+		const ctx_1 = canvas[1].getContext("2d");
+		ctx_1.beginPath();
+		ctx_1.moveTo(20,20);
+		ctx_1.bezierCurveTo(30,35,5,35,10,20);
+		ctx_1.quadraticCurveTo(13,11,23,10);
+		ctx_1.quadraticCurveTo(17,16,20,20);
+		ctx_1.lineWidth = icons.line_width;
+		ctx_1.strokeStyle = icons.stroke_style_1;
+		ctx_1.stroke();
+	},
+	////offers camera icon
+	camera: function() {
+		//hook
+		const canvas = document.getElementById("camera-icon").getElementsByTagName("canvas");
+		//draw
+		const ctx_0 = canvas[0].getContext("2d");
+		ctx_0.beginPath();
+		ctx_0.moveTo(2,7);
+		ctx_0.quadraticCurveTo(2,2,7,2);
+		ctx_0.lineTo(33,2);
+		ctx_0.quadraticCurveTo(38,2,38,7);
+		ctx_0.lineTo(38,23);
+		ctx_0.quadraticCurveTo(38,28,33,28);
+		ctx_0.lineTo(7,28);
+		ctx_0.quadraticCurveTo(2,28,2,23);
+		ctx_0.lineTo(2,7);
+		ctx_0.lineWidth = icons.line_width;
+		ctx_0.strokeStyle = icons.stroke_style_1;
+		ctx_0.stroke();
+		//draw
+		const ctx_1 = canvas[1].getContext("2d");
+		ctx_1.beginPath();
+		ctx_1.moveTo(0,0);
+		ctx_1.lineTo(5,0);
+		ctx_1.lineWidth = icons.line_width;
+		ctx_1.strokeStyle = icons.stroke_style_1;
+		ctx_1.stroke();
+		//draw
+		const ctx_2 = canvas[2].getContext("2d");
+		ctx_2.beginPath();
+		ctx_2.moveTo(0,0);
+		ctx_2.lineTo(5,0);
+		ctx_2.lineWidth = icons.line_width;
+		ctx_2.strokeStyle = icons.stroke_style;
+		ctx_2.stroke();
+		//draw
+		for(let i=3;i<6;i++) {
+			const ctx_cir = canvas[i].getContext("2d");
+			ctx_cir.beginPath();
+			ctx_cir.arc(20,20,5,0,2*Math.PI);
+			ctx_cir.lineWidth = icons.line_width;
+			ctx_cir.strokeStyle = icons.stroke_style_1;
+			ctx_cir.stroke();
+		}
 	}
 };
 

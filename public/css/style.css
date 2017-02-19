@@ -617,6 +617,7 @@ Image Containers
 }
 #offers__content-wrapper {
 	height: 100vh;
+	margin-top: 4.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -676,11 +677,94 @@ Image Containers
 	margin: 1.7rem;
 }
 #offers__list li figure {
-	background-color: pink;
 	width: 40px;
 	height: 40px;
 	align-self: center;
 	margin-right: 1rem;
+}
+/* printer icon */
+#printer-icon canvas:nth-child(1) {
+	width: 40px;
+	height: 30px;
+	margin-top: 10px;
+}
+#printer-icon canvas:nth-child(2) {
+	width: 20px;
+	height: 16px;
+	margin-left: 10px;
+}
+#printer-icon canvas:nth-child(3) {
+	width: 20px;
+	height: 25px;
+	margin-left: 10px;
+	margin-top: 22px;
+}
+#printer-icon canvas:nth-child(4) {
+	margin-left: 17.5px;
+	margin-top: 27px;
+}
+#printer-icon canvas:nth-child(5) {
+	margin-left: 17.5px;
+	margin-top: 33px;
+}
+#printer-icon canvas:nth-child(6) {
+	margin-left: 17.5px;
+	margin-top: 36px;
+}
+/* paint brush icon */
+#paint-brush-icon canvas:nth-child(1) {
+	width: 35px;
+	height: 45px;
+	margin-top: -5px;
+	-webkit-transform: rotate(35deg);
+	-moz-transform: rotate(35deg);
+	-ms-transform: rotate(35deg);
+	-o-transform: rotate(35deg);
+	transform: rotate(35deg);
+}
+#paint-brush-icon canvas:nth-child(2) {
+	width: 30px;
+	height: 30px;
+	margin-left: -8px;
+	margin-top: 13px;
+	-webkit-transform: rotate(-145deg);
+	-moz-transform: rotate(-145deg);
+	-ms-transform: rotate(-145deg);
+	-o-transform: rotate(-145deg);
+	transform: rotate(-145deg);
+}
+/* camera icon */
+#camera-icon canvas:nth-child(1) {
+	width: 40px;
+	height: 42px;
+	margin-top: 8px;
+}
+#camera-icon canvas:nth-child(2) {
+	width: 80px;
+	height: 200px;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+#camera-icon canvas:nth-child(3) {
+	width: 50px;
+	height: 80px;
+	margin-left: 17px;
+	margin-top: 6px;
+}
+#camera-icon canvas:nth-child(4) {
+	width: 60px;
+	margin-left: -14px;
+	margin-top: -7px;
+}
+#camera-icon canvas:nth-child(5) {
+	width: 32px;
+	margin-left: 0px;
+	margin-top: 7px;
+}
+#camera-icon canvas:nth-child(6) {
+	width: 20px;
+	margin-left: 21px;
+	margin-top: 7px;
 }
 #offers__list li figcaption {
 
