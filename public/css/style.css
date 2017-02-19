@@ -19,7 +19,7 @@ html body {
 	margin:0;
 	font-size: 100%;
 }
-p,span,a,ul,ol,li,h1,h2,h3,h4,h5,h6 {
+p,span,a,ul,ol,li,figure,figcaption,h1,h2,h3,h4,h5,h6 {
 	font-size: 1rem;
 	font-family: 'Open Sans', sans-serif;
 	text-decoration: none;
@@ -222,8 +222,22 @@ Image Containers
 	margin-left: -0.1rem;
 }
 #mouse-icon {
-	display: none;
+	width: 23px;
+	height: 25px;
+	align-self: flex-end;
 	position: absolute;
+	margin-top: -22.5px;
+}
+#mouse-icon canvas {
+	width: inherit;
+	height: inherit;
+	position: inherit;
+}
+#mouse-icon canvas:nth-child(2) {
+	width: 25%;
+	height: 25%;
+	left:38%;
+	top: 25%;
 }
 /* HOME MEDIA QUERIES */
 @media (min-width: 325px) {
@@ -248,6 +262,12 @@ Image Containers
 		font-size: 0.8rem;
 	}
 }
+@media (min-width: 700px) {
+	#home article {
+		border: 4px solid rgba(255,255,255,1);
+		padding: 3rem;
+	}
+}
 @media (min-width: 1100px) {
 	#home {
 		background-image: url("http://www.skylinetradeshowtips.com/wp-content/uploads/2015/11/emailcampaign.jpg");
@@ -262,8 +282,8 @@ Image Containers
 	#home article {
 		height: 16rem;
 		margin-left: 20.2rem;
+		padding: 0;
 		padding-right: 4rem;
-		border: 4px solid rgba(255,255,255,1);
 	}
 	#home article div:nth-child(1) {
 		display: flex;
@@ -277,6 +297,10 @@ Image Containers
 		margin-left: 0rem;
 		margin-top: 1rem;
 	}
+	#mouse-icon {
+		margin-left: 51.5px;
+		margin-top: -42.5px;
+	}
 }
 /* ABOUT SECTION */
 #about {
@@ -285,8 +309,7 @@ Image Containers
 	align-items: center;
 }
 #about__content {
-	width: 80%;
-	margin: 5rem 0;
+	margin: 4.5rem 1.7rem;
 	display: inherit;
 	justify-content: center;
 	align-items: center;
@@ -363,7 +386,8 @@ Image Containers
 	width: 1.5rem;
 	height: 50%;
 	position: absolute;
-	left: 100%;
+	left: 100.5%;
+	top: -2px;
 	margin-left: -1.5rem;
 	align-self: flex-start;
 }
@@ -375,6 +399,8 @@ Image Containers
 	width: 1.5rem;
 	height: 50%;
 	position: absolute;
+	left: -2px;
+	top: -2px;
 	align-self: flex-end;
 }
 #about ul {
@@ -389,13 +415,51 @@ Image Containers
 	display: inherit;
 	justify-content: center;
 	align-items: center;
+	background: -webkit-linear-gradient(left, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: -o-linear-gradient(right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: -moz-linear-gradient(to right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: linear-gradient(to right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
 }
 #about ul li figure {
-	width: 4rem;
+	align-self: flex-start;
+	width: 40px;
+	height: 40px;
 	position: relative;
+	left: -20px;
+	top: 15px;
+	margin: 0 0.7rem 0 1.7rem;
 }
 #about ul li figure canvas {
 	position: absolute;
+}
+/* gear icon */
+#about ul li:nth-child(1) figure canvas:nth-child(3) {
+	transform: rotate(45deg);
+}
+#about ul li:nth-child(1) figure canvas:nth-child(4) {
+	transform: rotate(90deg);
+}
+#about ul li:nth-child(1) figure canvas:nth-child(5) {
+	transform: rotate(135deg);
+}
+#about ul li:nth-child(1) figure canvas:nth-child(6) {
+	transform: rotate(180deg);
+}
+#about ul li:nth-child(1) figure canvas:nth-child(7) {
+	transform: rotate(225deg);
+}
+#about ul li:nth-child(1) figure canvas:nth-child(8) {
+	transform: rotate(270deg);
+}
+#about ul li:nth-child(1) figure canvas:nth-child(9) {
+	transform: rotate(315deg);
+}
+/* computer icon */
+#about ul li:nth-child(3) figure canvas:nth-child(2) {
+	width: 30px;
+	height: 25px;
+	left: 5px;
+	top: 5px;
 }
 #about ul li div h4 {
 	position: relative;
@@ -409,9 +473,8 @@ Image Containers
 	font-weight: normal;
 	line-height: 1.3rem;
 	color: rgba(143, 143, 143, 1);
+	margin-right: 1rem;
 }
-
-
 /* ABOUT MEDIA QUERIES */
 @media (min-width: 760px) {
 	#about {
@@ -422,7 +485,6 @@ Image Containers
 	}
 	#about__images {
 		display: initial;
-
 	}
 	#about ul li {
 		padding: 0;
@@ -458,7 +520,7 @@ Image Containers
 
 
 
-#talents_container, #contact_container, #offers_container, #works_container, header {
+#talents_container, #contact_container, #offers_container, header {
 	display: none;
 }
 
