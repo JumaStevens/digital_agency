@@ -149,8 +149,8 @@ var works = {
 	sub_img: document.getElementsByClassName("works-img-slide")[0].getElementsByTagName("img"),
 	copy: document.getElementById("works").getElementsByTagName("article")[0].getElementsByTagName("div"),
 	main_img: document.getElementById("works").getElementsByClassName("img-container")[0].getElementsByTagName("img")[0],
-	index_0: document.getElementById("works").getElementsByClassName("img-container")[0].getElementsByTagName("figcaption")[0],
-	index_1: document.getElementById("works").getElementsByTagName("figcaption")[0],
+	index_0: document.getElementById("works").getElementsByTagName("figcaption")[0].getElementsByTagName("p")[0],
+	index_1: document.getElementById("works").getElementsByTagName("figcaption")[0].getElementsByTagName("p")[1],
 
 	//add event listener 
 	addListener: function() {

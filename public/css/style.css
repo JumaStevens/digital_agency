@@ -526,15 +526,26 @@ Image Containers
 	width: 40vw;
 	height: 40vw;
 }
-#work article figure div {
+#works article figure div {
+	width: 5rem;
+	height: 3rem;
 	display: inherit;
-	
-	width: 1.5rem;
-	height:20rem;
+	justify-content: center;
+	align-items: center;
 	position: absolute;
-	left: -2px;
-	top: -2px;
+	left: 100%;
+	margin-left: -5rem;
 	align-self: flex-end;
+}
+#works figcaption p {
+	display: inline;
+	font-weight: 900;
+}
+#works figcaption p:nth-child(1) {
+	color: rgba(34, 34, 34, 1);
+}
+#works figcaption p:nth-child(2) {
+	color: rgba(143, 143, 143, 1);
 }
 #works article > div {
 	display: none;
@@ -553,7 +564,7 @@ Image Containers
 	text-transform: capitalize;
 	color: rgba(47, 128, 182, 1);
 }
-#works p {
+#works div > p {
 	margin: 1.5rem 0;
 	font-family: 'Raleway', sans-serif;
 	font-size: 1rem;
@@ -596,8 +607,99 @@ Image Containers
 /* WORKS MEDIA QUERIES */
 @media (min-width: 765px) {
 	#works article figure {
-		display: initial;
+		display: flex;
 	}
+}
+
+/* OFFERS */
+#offers {
+	flex-direction: column;
+}
+#offers__content-wrapper {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#offers__background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url("/images/offers_background.jpg");
+	background-size: cover;
+}
+#offers__background div {
+	background-color: rgba(47, 128, 182, 0.9);
+	width: inherit;
+	height: inherit;
+	position: inherit;
+}
+#offers article {
+	position: relative;
+	z-index: 2;
+	margin: 4.5rem 1.7rem;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 1);
+}
+#offers article h3 {
+	font-size: 1.8rem;
+	font-weight: inherit;
+	line-height: 1.2em;
+	color: inherit;
+}
+#offers article p {
+	margin: 1.5rem 0;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1.3rem;
+	text-transform: none;
+}
+#offers article a {
+	position: relative;
+	top: 1rem;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.7rem;
+	font-weight: 900;
+}
+#offers__list {
+	padding: 5rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(34,34,34,1);
+}
+#offers__list li {
+	display: flex;
+	margin: 1.7rem;
+}
+#offers__list li figure {
+	background-color: pink;
+	width: 40px;
+	height: 40px;
+	align-self: center;
+	margin-right: 1rem;
+}
+#offers__list li figcaption {
+
+	color: rgba(255,255,255,1);
+}
+#offers__list li figcaption h4 {
+	line-height: 1.6rem;
+}
+#offers__list li figcaption h4:first-letter {
+	color: rgba(47, 128, 182, 1);
+}
+#offers__list li figcaption p {
+	font-size: 0.8rem;
+	font-weight: normal;
+	line-height: 1.3rem;
+	text-transform: none;
+}
+#offers canvas {
+	position: absolute;
 }
 
 
@@ -607,8 +709,7 @@ Image Containers
 
 
 
-
-#talents_container, #contact_container, #offers_container, header {
+#talents_container, #contact_container, header {
 	display: none;
 }
 
