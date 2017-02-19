@@ -1,3 +1,13 @@
+//ONLOAD
+window.onload = function() {
+	//draw canvas icons
+	icons.draw();
+	//initiate work events
+	works.addListener();
+};
+
+
+
 //ICONS
 var icons = {
 	//global settings
@@ -129,8 +139,107 @@ var icons = {
 	}
 };
 
-//DRAW ICONS CALL
-icons.draw();
+
+
+
+//WORKS
+var works = {
+	//hooks
+	img_div: document.getElementsByClassName("works-img-slide")[0].getElementsByTagName("div"),
+	sub_img: document.getElementsByClassName("works-img-slide")[0].getElementsByTagName("img"),
+	copy: document.getElementById("works").getElementsByTagName("article")[0].getElementsByTagName("div"),
+	main_img: document.getElementById("works").getElementsByClassName("img-container")[0].getElementsByTagName("img")[0],
+	index_0: document.getElementById("works").getElementsByClassName("img-container")[0].getElementsByTagName("figcaption")[0],
+	index_1: document.getElementById("works").getElementsByTagName("figcaption")[0],
+
+	//add event listener 
+	addListener: function() {
+		//shorthand
+		const div = works.img_div;
+		//add listener to each img
+		for(let i=0;i<div.length;i++) {
+			//add listener
+			div[i].addEventListener("click", works.adjust, false);
+			//add class name
+			div[i].className = "js-works__div-hook-" + i;
+		}
+		//initialize content
+		works.adjust("init");
+	},
+	//adjust selection
+	adjust: function(value) {
+		//shorthands
+		const div = works.img_div;
+		const copy = works.copy;
+		const img = works.main_img;
+		const sub_img = works.sub_img;
+		const index = [works.index_0, works.index_1];
+
+		//initialize content
+		if(value === "init") {
+			//set main img src
+			img.src = sub_img[0].src;
+			//set display
+			copy[1].style.display = "initial";
+			//set opacity
+			div[0].style.opacity = 1;
+			//set index
+			index[0].innerHTML = 1;
+			index[1].innerHTML = "/ " + div.length;
+		}
+		//check for user input
+		if(value.type === "click") {
+			//target identifier
+			const target = Number(value.target.className[19]);
+			//reset
+			for(let i=0;i<div.length;i++) {
+				//set display
+				copy[i+1].style.display = "none";
+				//set opacity
+				div[i].style.opacity = 0;
+			}
+			//set main img src
+			img.src = sub_img[target].src;
+			//set display
+			copy[target+1].style.display = "initial";
+			//set opacity
+			div[target].style.opacity = 1;
+			//set index
+			index[0].innerHTML = target + 1;
+		}
+	
+
+
+
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
