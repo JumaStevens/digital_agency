@@ -339,8 +339,7 @@ Image Containers
 	font-style: italic;
 	color: rgba(113, 113, 113, 1);
 }
-#about__text aside q:before,
-#about__text aside q:after {
+q:before, q:after {
 	content: no-open-quote;
 	content: no-close-quote;
 }
@@ -417,7 +416,7 @@ Image Containers
 	align-items: center;
 	background: -webkit-linear-gradient(left, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
 	background: -o-linear-gradient(right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
-	background: -moz-linear-gradient(to right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: -moz-linear-gradient(right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
 	background: linear-gradient(to right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
 }
 #about ul li figure {
@@ -611,7 +610,7 @@ Image Containers
 	}
 }
 
-/* OFFERS */
+/* OFFERS SECTION */
 #offers {
 	flex-direction: column;
 }
@@ -620,7 +619,7 @@ Image Containers
 	margin-top: 4.5rem;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 }
 #offers__background {
 	width: 100%;
@@ -674,13 +673,19 @@ Image Containers
 }
 #offers__list li {
 	display: flex;
-	margin: 1.7rem;
+	margin: 1.7rem 0.7rem;
 }
 #offers__list li figure {
+	align-self: flex-start;
 	width: 40px;
 	height: 40px;
-	align-self: center;
-	margin-right: 1rem;
+	position: relative;
+	left: -20px;
+	top: 15px;
+	margin: 0 0.7rem 0 1.7rem;
+}
+#offers canvas {
+	position: absolute;
 }
 /* printer icon */
 #printer-icon canvas:nth-child(1) {
@@ -777,13 +782,205 @@ Image Containers
 	color: rgba(47, 128, 182, 1);
 }
 #offers__list li figcaption p {
+	margin-right: 1rem;
 	font-size: 0.8rem;
 	font-weight: normal;
 	line-height: 1.3rem;
 	text-transform: none;
 }
-#offers canvas {
+
+/* TALENTS SECTION */
+#talents {
+	flex-direction: column;
+}
+#talents-wrapper {
+	margin: 4.5rem 1.7rem;
+	display: flex;
+	flex-direction: column;
+}
+#talents-icons {
+	order: 2;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+#talents-icons li {
+	width: 125px;
+	height: 125px;
+	margin: 8px 0;
+	display: flex;
+}
+#talents-icons div {
+	width: 125px;
+	height: 125px;
 	position: absolute;
+	background-color: rgba(47, 128, 182, 0.9);
+	opacity: 0;
+}
+#talents-icons img {
+	width: 100%;
+	height: 100%;
+}
+#talents-icons p {
+	align-self: flex-end;
+	position: absolute;
+	padding: 0.3em;
+	font-size: 0.7rem;
+	font-weight: normal;
+	color: rgba(34,34,34,1);
+	text-transform: uppercase;
+	background-color: rgba(255,255,255,1);
+}
+#talents-wrapper article {
+	order: 1;
+}
+#talents h4:first-letter {
+	color: rgba(47, 128, 182, 1);
+}
+#talents h4 {
+	line-height: 1.6rem;
+}
+#talents-wrapper article p {
+	margin: 1.5rem 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.3rem;
+    color: rgba(143, 143, 143, 1);
+}
+#talents-skillset {
+	margin: 1.5rem 0;
+}
+#talents-skillset li {
+	margin: 0.4rem 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+#talents-skillset li div {
+	height: 0.5rem;
+	margin-left: 1.7rem;
+	position: absolute;
+	left: 0;
+	background-color: rgba(47, 128, 182, 0.9);
+}
+/* skillset levels */
+#talents-skillset li:nth-child(1) div {
+	width: 10%;
+}
+#talents-skillset li:nth-child(2) div {
+	width: 50%;
+}
+#talents-skillset li:nth-child(3) div {
+	width: 35%;
+}
+#talents-skillset li p {
+	margin:0;
+}
+#talents-clients {
+	display: flex;
+	flex-wrap: wrap;
+}
+#talents-clients div, #talents-testimonials li {
+	background: -webkit-linear-gradient(left, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: -o-linear-gradient(right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: -moz-linear-gradient(right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: linear-gradient(to right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+}
+#talents-clients div {
+	display: flex;
+}
+#paper-icon {
+	background-color: pink;
+	width: 40px;
+	height: 40px;
+}
+#paper-icon canvas {
+	position: absolute;
+}
+#talents-clients div figcaption {
+
+}
+#talents-clients div figcaption h4 {
+	position: relative;
+    top: -0.4rem;
+    color: rgba(47, 128, 182, 1);
+    line-height: 1.6rem;
+}
+#talents-clients div figcaption p {
+	font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    font-weight: normal;
+    line-height: 1.3rem;
+    color: rgba(143, 143, 143, 1);
+    margin-right: 1rem;
+}
+#talents-testimonials li {
+	padding: 1.7rem;
+    line-height: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#talents-testimonials .image-cropper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+#talents-testimonials li div img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+#talents-testimonials li q {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+    font-weight: normal;
+    line-height: inherit;
+    font-style: italic;
+    color: rgba(113, 113, 113, 1);
+}
+#talents-testimonials li q span:before {
+	content: open-quote;
+    position: relative;
+    top: .5rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(113, 113, 113, 1);
+}
+#talents-testimonials li q span {
+	position: relative;
+	top: 0.8rem;
+	margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bolder;
+    font-style: normal;
+    text-transform: uppercase;
+    color: rgba(34, 34, 34, 1);
+}
+#up-down-arrows {
+	width: 100%;
+	padding: 0 0 1rem 0;
+	display: flex;
+	justify-content: center;
+	background: -webkit-linear-gradient(left, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: -o-linear-gradient(right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: -moz-linear-gradient(right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+	background: linear-gradient(to right, rgba(246, 246, 246, 1), rgba(255, 255, 255, 1));
+}
+#up-down-arrows a {
+	margin: 0 0.5rem;
+	font-size: 1.3rem;
+}
+#up-down-arrows a:nth-child(1) {
+	color: rgba(113, 113, 113, 1);
+}
+#up-down-arrows a:hover {
+	border-bottom: 3px solid rgba(47, 128, 182, 1);
 }
 
 
@@ -791,9 +988,7 @@ Image Containers
 
 
 
-
-
-#talents_container, #contact_container, header {
+#contact_container, header {
 	display: none;
 }
 

@@ -146,6 +146,7 @@ var icons = {
 		ctx_2.strokeStyle = icons.stroke_style;
 		ctx_2.stroke();
 	},
+
 	//offers printer icon
 	printer: function() {
 		//hook
@@ -178,6 +179,7 @@ var icons = {
 			ctx_lines.stroke();
 		}
 	},
+
 	//offers paint brush icon
 	paint_brush: function() {
 		//hook
@@ -201,7 +203,8 @@ var icons = {
 		ctx_1.strokeStyle = icons.stroke_style_1;
 		ctx_1.stroke();
 	},
-	////offers camera icon
+
+	//offers camera icon
 	camera: function() {
 		//hook
 		const canvas = document.getElementById("camera-icon").getElementsByTagName("canvas");
@@ -316,10 +319,6 @@ var works = {
 			//set index
 			index[0].innerHTML = target + 1;
 		}
-	
-
-
-
 	}
 };
 
