@@ -4,6 +4,8 @@ window.onload = function() {
 	icons.draw();
 	//initiate work events
 	works.addListener();
+	//initiate talents events
+	talents.addListener();
 };
 
 
@@ -278,6 +280,7 @@ var works = {
 		//initialize content
 		works.adjust("init");
 	},
+
 	//adjust selection
 	adjust: function(value) {
 		//shorthands
@@ -286,6 +289,7 @@ var works = {
 		const img = works.main_img;
 		const sub_img = works.sub_img;
 		const index = [works.index_0, works.index_1];
+
 
 		//initialize content
 		if(value === "init") {
@@ -300,7 +304,7 @@ var works = {
 			index[1].innerHTML = "/ " + div.length;
 		}
 		//check for user input
-		if(value.type === "click") {
+		else if(value.type === "click") {
 			//target identifier
 			const target = Number(value.target.className[19]);
 			//reset
@@ -323,7 +327,144 @@ var works = {
 };
 
 
+//TALENTS
+var talents = {
+	//hooks
+	icon: document.getElementById("talents-icons").getElementsByTagName("li"),
+	header: document.getElementById("talents-wrapper").getElementsByTagName("article")[0].getElementsByTagName("h3"),
+	copy: document.getElementById("talents-wrapper").getElementsByTagName("article")[0].getElementsByTagName("p"),
+	skills: document.getElementById("talents-skillset").getElementsByTagName("li"),
+	testi: document.getElementById("talents-testimonials").getElementsByTagName("li"),
+	testi_arrows: document.getElementById("up-down-arrows").getElementsByTagName("a"),
+	//content
+	name: ["Sam Billard", "Juma Stevens", "Sarah Kreger", "Brett Kymak"],
+	skillset: 
+	[["photoshop","illustrator","html/css"], ["html/css","javascript","node.js"],
+	["website","email","catalog",], ["creative", "team player", "sales"]],
+	skillset_score:
+	[[10,40,35],[40,55,20],
+	[54,15,25],[19,30,46]],
 
+	//add event listener 
+	addListener: function() {
+		//shorthand
+		const div = talents.icon;
+		const arrow = talents.testi_arrows;
+
+		//add listener to each img
+		for(let i=0;i<div.length;i++) {
+			//add listener
+			div[i].getElementsByTagName("div")[0].addEventListener("click", talents.adjust, false);
+			//add class name
+			div[i].getElementsByTagName("div")[0].className = "js-talents__div-hook-" + i;
+		}
+		//add listener to each testimonials arrow
+		for(let i=0;i<arrow.length;i++) {
+			//add listener
+			arrow[i].addEventListener("click", talents.testimonials, false);
+			//add class name
+			arrow[i].className = "js-testimonials__a-hook-" + i;
+		}
+		//initialize content
+		talents.adjust("init");
+	},
+
+	//adjust selection
+	adjust: function(value) {
+		//shorthands
+		const icon = talents.icon;
+		const header = talents.header;
+		const copy = talents.copy;
+		const skills = talents.skills;
+		const testi = talents.testi;
+		const name = talents.name;
+		const set = talents.skillset;
+		const score = talents.skillset_score;
+
+		//initialize content
+		if(value === "init") {
+			//set icon opacity
+			icon[0].getElementsByTagName("div")[0].style.opacity = 1;
+			//set header value
+			header[0].innerHTML = icon[0].getElementsByTagName("p")[0].innerHTML;
+			header[1].innerHTML = name[0];
+			//set copy display
+			copy[0].style.display = "initial";
+			//set skillset value
+			for(let i=0;i<skills.length;i++) {
+				skills[i].getElementsByTagName("p")[0].innerHTML = set[0][i];
+				skills[i].getElementsByTagName("div")[0].style.width = score[0][i] + "%";
+			}
+			//set testimonials display
+			testi[0].style.display = "flex";
+		}
+
+		//check for user input
+		else if(value.type === "click") {
+			//target identifier
+			const target = Number(value.target.className[21]);
+			//reset
+			for(let i=0;i<icon.length;i++) {
+				//set display
+				copy[i].style.display = "none";
+				//set opacity
+				icon[i].getElementsByTagName("div")[0].style.opacity = 0;
+			}
+			//set icon opacity
+			icon[target].getElementsByTagName("div")[0].style.opacity = 1;
+			//set header value
+			header[0].innerHTML = icon[target].getElementsByTagName("p")[0].innerHTML;
+			header[1].innerHTML = name[target];
+			//set copy display
+			copy[target].style.display = "initial";
+			//set skillset value
+			for(let i=0;i<skills.length;i++) {
+				skills[i].getElementsByTagName("p")[0].innerHTML = set[target][i];
+				skills[i].getElementsByTagName("div")[0].style.width = score[target][i] + "%";
+			}
+		}
+	},
+
+	//testimonials selection
+	testimonials: function(value) {
+		//shorthand
+		const arrow = talents.testi_arrows;
+		const testi = talents.testi;
+		//target identifier
+		const target = Number(value.target.className[24]);
+		//placeholder for active testimonial
+		let current;
+
+		//find which testimonial is currently active
+		for(let i=0;i<testi.length;i++) {
+			//style check
+			let style_check = window.getComputedStyle(testi[i]).getPropertyValue("display");
+			if(style_check != "none") {
+				//assign current value
+				current = i;
+				//set current testimonial display
+				testi[i].style.display = "none";
+			}
+		}
+		//adjust testimonials
+		if(target === 0) {
+			//check for loop
+			if(current - 1 < 0) {
+				testi[testi.length - 1].style.display = "flex";
+			} else {
+				testi[current - 1].style.display = "flex";
+			}
+		}
+		else if(target === 1) {
+			//check for loop
+			if(current + 1 === testi.length) {
+				testi[0].style.display = "flex";
+			} else {
+				testi[current + 1].style.display = "flex";
+			}
+		}
+	}
+};
 
 
 

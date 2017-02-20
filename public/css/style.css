@@ -799,6 +799,7 @@ q:before, q:after {
 	flex-direction: column;
 }
 #talents-icons {
+	margin-top: 1rem;
 	order: 2;
 	display: flex;
 	flex-wrap: wrap;
@@ -834,14 +835,30 @@ q:before, q:after {
 #talents-wrapper article {
 	order: 1;
 }
+#talents-wrapper article h3:nth-child(1) {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: rgba(34, 34, 34, 1);
+}
+#talents-wrapper article h3:nth-child(2) {
+	font-family: 'Raleway', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: rgba(47, 128, 182, 1);
+}
 #talents h4:first-letter {
 	color: rgba(47, 128, 182, 1);
 }
 #talents h4 {
+	margin: 1rem 0;
 	line-height: 1.6rem;
 }
 #talents-wrapper article p {
-	margin: 1.5rem 0;
+	display: none;
+	margin: 1rem 0;
     font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     font-weight: normal;
@@ -863,19 +880,12 @@ q:before, q:after {
 	position: absolute;
 	left: 0;
 	background-color: rgba(47, 128, 182, 0.9);
-}
-/* skillset levels */
-#talents-skillset li:nth-child(1) div {
-	width: 10%;
-}
-#talents-skillset li:nth-child(2) div {
-	width: 50%;
-}
-#talents-skillset li:nth-child(3) div {
-	width: 35%;
+	transition-property: width;
+	transition-duration: 1s;
 }
 #talents-skillset li p {
 	margin:0;
+	display: initial;
 }
 #talents-clients {
 	display: flex;
@@ -918,7 +928,7 @@ q:before, q:after {
 #talents-testimonials li {
 	padding: 1.7rem;
     line-height: 1.3rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 }
