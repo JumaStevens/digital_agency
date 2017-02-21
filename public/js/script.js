@@ -26,6 +26,7 @@ var icons = {
 		icons.printer();
 		icons.paint_brush();
 		icons.camera();
+		icons.paper();
 	},
 
 	//home mouse icon
@@ -249,6 +250,64 @@ var icons = {
 			ctx_cir.lineWidth = icons.line_width;
 			ctx_cir.strokeStyle = icons.stroke_style_1;
 			ctx_cir.stroke();
+		}
+	},
+	//talents paper icon
+	paper: function() {
+		//hook
+		const canvas = document.getElementById("paper-icon").getElementsByTagName("canvas");
+		//draw
+		const ctx_0 = canvas[0].getContext("2d");
+		ctx_0.beginPath();
+		ctx_0.moveTo(20,40);
+		ctx_0.lineTo(5,40);
+		ctx_0.quadraticCurveTo(0,40,0,35);
+		ctx_0.lineTo(0,5);
+		ctx_0.quadraticCurveTo(0,0,5,0);
+		ctx_0.lineTo(35,0);
+		ctx_0.quadraticCurveTo(40,0,40,5);
+		ctx_0.lineTo(40,20);
+		ctx_0.lineWidth = icons.line_width;
+		ctx_0.strokeStyle = icons.stroke_style;
+		ctx_0.stroke();
+		//draw
+		const ctx_1 = canvas[1].getContext("2d");
+		ctx_1.beginPath();
+		ctx_1.moveTo(0,5);
+		ctx_1.quadraticCurveTo(0,0,3,0);
+		ctx_1.quadraticCurveTo(6,0,6,5);
+		ctx_1.lineTo(0,5);
+		ctx_1.fillStyle = icons.stroke_style;
+		ctx_1.fill();
+		//draw
+		const ctx_2 = canvas[2].getContext("2d");
+		ctx_2.beginPath();
+		ctx_2.moveTo(0,5);
+		ctx_2.lineTo(5,5);
+		ctx_2.lineTo(5,20);
+		ctx_2.lineTo(0,20);
+		ctx_2.lineTo(0,5);
+		ctx_2.lineWidth = icons.line_width;
+		ctx_2.strokeStyle = icons.stroke_style;
+		ctx_2.stroke();
+		//draw
+		const ctx_3 = canvas[3].getContext("2d");
+		ctx_3.beginPath();
+		ctx_3.moveTo(0,20);
+		ctx_3.lineTo(6,20);
+		ctx_3.lineTo(2,28);
+		ctx_3.lineTo(0,20);
+		ctx_3.fillStyle = icons.stroke_style;
+		ctx_3.fill();
+		//draw
+		for(let i=4;i<canvas.length;i++) {
+			const ctx = canvas[i].getContext("2d");
+			ctx.beginPath();
+			ctx.moveTo(0,0);
+			ctx.lineTo(30,0);
+			ctx.lineWidth = icons.line_width;
+			ctx.strokeStyle = icons.stroke_style;
+			ctx.stroke();
 		}
 	}
 };
