@@ -1,5 +1,7 @@
 //ONLOAD
 window.onload = function() {
+	//initiate navigation
+	nav.addListener();
 	//draw canvas icons
 	icons.draw();
 	//initiate work events
@@ -8,6 +10,89 @@ window.onload = function() {
 	talents.addListener();
 };
 
+//NAVIGATION
+var nav = {
+	//hook
+	navigation: document.getElementsByTagName("header")[0].getElementsByTagName("ul")[0],
+	hamburger_icon: document.getElementById("hamburger-icon"),
+	sections: document.getElementsByTagName("section"),
+	//toggle
+	toggle: false,
+
+	//add event listener
+	addListener: function() {
+		//hook
+		const nav_icon = nav.hamburger_icon;
+		//add listener
+		nav_icon.addEventListener("click", nav.action, false);
+		//initiate icon
+		nav.hamburger();
+	},
+
+	//draw hamburger icon
+	hamburger: function() {
+		//hook
+		const canvas = nav.hamburger_icon.getElementsByTagName("canvas");
+		//draw
+		for(let i=0;i<canvas.length;i++) {
+			const ctx = canvas[i].getContext("2d");
+			ctx.beginPath();
+			ctx.moveTo(10,0);
+			ctx.lineTo(30,0);
+			ctx.lineWidth = 4;
+			ctx.strokeStyle = "rgba(255,255,255,1)";
+			ctx.stroke();
+		}
+	},
+
+	//click actions
+	action: function() {
+		//shorthand
+		const navigation = nav.navigation;
+		const canvas = nav.hamburger_icon.getElementsByTagName("canvas");
+		const toggle = nav.toggle;
+		const section = nav.sections;
+		
+		//open nav
+		if(!toggle) {
+			//toggle
+			nav.toggle = true;
+			//expand navigation
+			navigation.style.opacity = 1;
+			navigation.style.visibility = "visible";
+			//adjust hamburger
+			canvas[0].style.transform = "rotate(225deg)";
+			canvas[0].style.marginTop = 5 + "px";
+			canvas[1].style.opacity = 0;
+			canvas[2].style.transform = "rotate(-225deg)";
+			canvas[2].style.marginTop = -5 + "px";
+			//sections off
+			setTimeout(function() { 
+				for(let i=0;i<section.length;i++) {
+					section[i].style.display = "none";
+				}
+			}, 250/*transition-duration*/);
+		}
+		//close nav
+		else if(toggle) {
+			//toggle
+			nav.toggle = false;
+			//collaspe navigation
+			navigation.style.opacity = 0;
+			navigation.style.visibility = "hidden";
+			//adjust hamburger
+			canvas[0].style.transform = "rotate(0deg)";
+			canvas[0].style.marginTop = 0 + "px";
+			canvas[1].style.opacity = 1;
+			canvas[2].style.transform = "rotate(0deg)";
+			canvas[2].style.marginTop = 0 + "px";
+			//sections on
+			for(let i=0;i<section.length;i++) {
+				section[i].style.display = "flex";
+			}
+		}
+	}
+};
 
 
 //ICONS

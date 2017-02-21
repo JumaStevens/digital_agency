@@ -97,7 +97,7 @@ Letter Case
 Body & Section
 */
 body {
-
+	background-color: rgba(255,255,255,1);
 }
 section {
 	width: 100vw;
@@ -130,12 +130,89 @@ Image Containers
 	display: flex;
 }
 
-
+/* HEADER */
+header {
+	position: absolute;
+	z-index: 5;
+}
+header h1 {
+	margin: 0 auto;
+	position: inherit;
+	z-index: 7;
+	padding: 0.75rem 0.8rem;
+	max-height: 40px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.8rem;
+	font-weight: 100;
+	text-transform: uppercase;
+	color: rgba(255,255,255,1);
+	
+}
+header h1 span {
+	color: rgba(255,255,255,1);
+}
+/*
+navigation
+*/
+header nav {
+	position: relative;
+	z-index: 6;
+	left: 100vw;
+	margin-left: -40px;
+}
+header nav figure {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	z-index: 7;
+}
+header nav figure canvas {
+	position: inherit;
+	opacity: 1;
+	margin-top: 0px;
+	-webkit-transform-origin: center 0px;
+	transform: rotate(0deg);
+	transition-property: transform, margin-top, opacity;
+	transition-duration: 0.5s;
+}
+header nav figure canvas:nth-child(1) {
+	top: 15px;
+}
+header nav figure canvas:nth-child(2) {
+	top: 20px;
+}
+header nav figure canvas:nth-child(3) {
+	top: 25px;
+}	
+header nav ul {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	left: -100vw;
+	margin-left: 40px;
+	opacity: 0;
+	visibility: hidden;
+	background-color: rgba(47, 128, 182, 1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition-property: opacity, visibility;
+	transition-duration: 0.25s;
+}
+header nav ul li {
+	margin: 2rem 0;
+	font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+	color: white;
+}
 /* HOME SECTION */
 #home {
 	width: 100vw;
 	height: 100vh;
-	background-image: url("http://www.skylinetradeshowtips.com/wp-content/uploads/2015/11/emailcampaign.jpg");
+	background-image: url("/images/home_background.jpg");
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -271,7 +348,7 @@ Image Containers
 }
 @media (min-width: 1100px) {
 	#home {
-		background-image: url("http://www.skylinetradeshowtips.com/wp-content/uploads/2015/11/emailcampaign.jpg");
+		background-image: url("/images/home_background.jpg");
 	}
 	#home__rec-0 {
 		display: initial;
