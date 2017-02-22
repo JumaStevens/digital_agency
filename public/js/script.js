@@ -37,8 +37,8 @@ var nav = {
 		for(let i=0;i<canvas.length;i++) {
 			const ctx = canvas[i].getContext("2d");
 			ctx.beginPath();
-			ctx.moveTo(10,0);
-			ctx.lineTo(30,0);
+			ctx.moveTo(8,0);
+			ctx.lineTo(32,0);
 			ctx.lineWidth = 4;
 			ctx.strokeStyle = "rgba(255,255,255,1)";
 			ctx.stroke();
@@ -52,7 +52,9 @@ var nav = {
 		const canvas = nav.hamburger_icon.getElementsByTagName("canvas");
 		const toggle = nav.toggle;
 		const section = nav.sections;
-		
+		//adjustment value
+		let n = 0;
+
 		//open nav
 		if(!toggle) {
 			//toggle
@@ -61,11 +63,17 @@ var nav = {
 			navigation.style.opacity = 1;
 			navigation.style.visibility = "visible";
 			//adjust hamburger
+			if(screen.width < 1024) {
+				n = 5;
+			}
+			if(screen.width >= 1024) {
+				n = 10;
+			}
 			canvas[0].style.transform = "rotate(225deg)";
-			canvas[0].style.marginTop = 5 + "px";
+			canvas[0].style.marginTop = n + "px";
 			canvas[1].style.opacity = 0;
 			canvas[2].style.transform = "rotate(-225deg)";
-			canvas[2].style.marginTop = -5 + "px";
+			canvas[2].style.marginTop = -n + "px";
 			//sections off
 			setTimeout(function() { 
 				for(let i=0;i<section.length;i++) {
@@ -486,8 +494,8 @@ var talents = {
 	[["photoshop","illustrator","html/css"], ["html/css","javascript","node.js"],
 	["website","email","catalog",], ["creative", "team player", "sales"]],
 	skillset_score:
-	[[10,40,35],[40,55,20],
-	[54,15,25],[19,30,46]],
+	[[30,40,35],[40,50,25],
+	[46,25,25],[29,30,46]],
 
 	//add event listener 
 	addListener: function() {
@@ -525,6 +533,25 @@ var talents = {
 		const set = talents.skillset;
 		const score = talents.skillset_score;
 
+		//adjuster value
+		let n = 0;
+
+		//adjust score values
+		if(screen.width < 1024) {
+			//check if score has been altered
+			if(score[0][0] != 30) {
+				n = 20;
+			}
+		}
+		if(screen.width >= 1024) {
+			//check if score has been altered
+			if(score[0][0] === 30) {
+				n = -20;
+			}
+		}
+
+
+
 		//initialize content
 		if(value === "init") {
 			//set icon opacity
@@ -537,7 +564,7 @@ var talents = {
 			//set skillset value
 			for(let i=0;i<skills.length;i++) {
 				skills[i].getElementsByTagName("p")[0].innerHTML = set[0][i];
-				skills[i].getElementsByTagName("div")[0].style.width = score[0][i] + "%";
+				skills[i].getElementsByTagName("div")[0].style.width = score[0][i] + n + "%";
 			}
 			//set testimonials display
 			testi[0].style.display = "flex";
@@ -564,7 +591,7 @@ var talents = {
 			//set skillset value
 			for(let i=0;i<skills.length;i++) {
 				skills[i].getElementsByTagName("p")[0].innerHTML = set[target][i];
-				skills[i].getElementsByTagName("div")[0].style.width = score[target][i] + "%";
+				skills[i].getElementsByTagName("div")[0].style.width = score[target][i] + n + "%";
 			}
 		}
 	},
