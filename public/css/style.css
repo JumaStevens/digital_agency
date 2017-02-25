@@ -13,7 +13,13 @@ WHITE : rgba(255, 255, 255, 1);
 
 
 /* RESET */
-html body {
+html {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+html, body {
 	box-sizing: border-box;
 	padding:0;
 	margin:0;
@@ -33,65 +39,13 @@ p,span,a,ul,ol,li,figure,figcaption,h1,h2,h3,h4,h5,h6 {
 
 /* GLOBAL STYLES */
 /*
-Font Colors
-*/
-.black_font {
-	color: rgba(34, 34, 34, 1);
-}
-.blue_font {
-	color: rgba(47, 128, 182, 1);
-}
-.grey_font {
-	color: rgba(143, 143, 143, 1);
-}
-.light_grey_font {
-	color: rgba(246, 246, 248, 1);
-}
-.white_font {
-	color: rgba(255, 255, 255, 1);
-}
-/*
 Fill Colors
 */
-.black_fill {
-	background-color: rgba(34, 34, 34, 1);
-}
 .blue_fill {
 	background-color: rgba(47, 128, 182, 0.9);
 }
-.grey_fill {
-	background-color: rgba(246, 246, 246, 1);
-}
-.light_grey_fill {
-	background-color: rgba(250, 250, 250, 1);
-}
 .white_fill {
 	background-color: rgba(255, 255, 255, 1);
-}
-/*
-Font Sizes
-*/
-.title_font {
-	font-family: 'Raleway', sans-serif;
-	font-size: 2.8rem;
-	font-weight: 900;
-}
-.large_font_size {
-	font-family: 'Raleway', sans-serif;
-	font-size: 1.8rem;
-	font-weight: 100;
-}
-.medium_font_size {
-	font-size: 1rem;
-}
-.small_font_size {
-	font-size: 0.8rem;
-}
-/*
-Letter Case
-*/
-.uppercase {
-	text-transform: uppercase;
 }
 /*
 Body & Section
@@ -218,6 +172,13 @@ header nav ul li {
     text-transform: uppercase;
 	color: white;
 }
+header nav ul li a {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-transform: inherit;
+	color: inherit;
+}
 /* HOME SECTION */
 #home {
 	width: 100vw;
@@ -238,8 +199,8 @@ header nav ul li {
 	display: none;
 }
 #home__rec-1 {
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	position: absolute;
 }
 #home article {
@@ -327,72 +288,6 @@ header nav ul li {
 	left:38%;
 	top: 25%;
 }
-
-
-/* 
-@media (min-width: 325px) {
-	#home article p {
-		font-size: 1.5rem;
-	}
-	#home article p span {
-		font-size: 2.5rem;
-	}
-	#home article a {
-		font-size: 0.5rem;
-	}
-}
-@media (min-width: 420px) {
-	#home article p {
-		font-size: 1.8rem;
-	}
-	#home article p span {
-		font-size: 2.8rem;
-	}
-	#home article a {
-		font-size: 0.8rem;
-	}
-}
-@media (min-width: 700px) {
-	#home article {
-		border: 4px solid rgba(255,255,255,1);
-		padding: 3rem;
-	}
-}
-@media (min-width: 1100px) {
-	#home {
-		background-image: url("/images/home_background.jpg");
-	}
-	#home__rec-0 {
-		display: initial;
-	}
-	#home__rec-1 {
-		width: 50%;
-		left: 50%;
-	}
-	#home article {
-		height: 16rem;
-		margin-left: 20.2rem;
-		padding: 0;
-		padding-right: 4rem;
-	}
-	#home article div:nth-child(1) {
-		display: none;
-		background-color: rgba(255,255,255,0.5);
-	}
-	#home article div:nth-child(2) {
-		margin-left: 2rem;
-	}
-	#home article div:nth-child(2) div {
-		height: 1.8rem;
-		margin-left: 0rem;
-		margin-top: 1rem;
-	}
-	#mouse-icon {
-		margin-left: 51.5px;
-		margin-top: -42.5px;
-	}
-}
-*/
 
 /* ABOUT SECTION */
 #about {
@@ -883,6 +778,8 @@ q:before, q:after {
 	color: rgba(143, 143, 143, 1);
 	text-transform: uppercase;
 	background-color: rgba(255,255,255,1);
+	margin-top: 2px;
+	margin-left: -2px;
 }
 #talents-wrapper article {
 	order: 1;
@@ -1038,7 +935,7 @@ q:before, q:after {
     border-radius: 50%;
 }
 #talents-testimonials li q {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Times', sans-serif;
 	font-size: 0.9rem;
     font-weight: normal;
     line-height: inherit;
@@ -1228,8 +1125,90 @@ q:before, q:after {
 	color: rgba(255,255,255,1);
 }
 
+/* FOOTER */
+footer {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(34,34,34,1);
+}
+footer p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1rem;
+	color: rgba(143, 143, 143, 1);
+	padding: 2rem 0;
+}
+footer p a {
+	color: rgba(47, 128, 182, 1);
+}
+
+/* POPUP */
+#popup {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 99;
+	background-color: rgba(47, 128, 182, 1);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+#popup article {
+	width: inherit;
+	height: inherit;
+	padding: 0 2rem;
+	background-color: rgba(255,255,255,1);
+	font-family: 'Raleway', sans-serif;
+	font-size: 1rem;
+	color: rgba(143,143,143,1);
+	line-height: 1.3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+#popup h6 {
+	color: rgba(47,128,182,1);
+	font-size: 1.5em;
+	padding-top: 2em;
+}
+#popup p {
+	color: inherit;
+	line-height: inherit;
+}
+#popup__button {
+	font-size: 0.8em;
+	text-transform: uppercase;
+	color: rgba(255,255,255,1);
+	background-color: rgba(47, 128, 182, 1);
+	margin: 0 auto;
+	padding: 1em 2em;
+	border-radius: 2em;
+	transition-property: padding;
+	transition-duration: 0.25s;
+}
+#popup__button:hover {
+	padding: 1em 2.3em;
+}
+#popup aside {
+	margin: 0 auto 0.5em auto;
+	font-size: 0.6em;
+}
 
 
+/* hover effect */
+header nav ul li:hover,
+#offers article a:hover {
+	opacity: 0.8;
+}
+#contact-form input[type=submit]:hover {
+	color: rgba(47, 128, 182, 1);
+}
+#contact-social li a:hover,
+footer p a:hover {
+	color: rgba(255,255,255,1);
+}
 
 
 /* MEDIA QUERY */
@@ -1280,6 +1259,9 @@ iphone 6 plus
 	#works h3 span, #about__text h3 span {
 		font-size: 2.3rem ;
 	}
+	#popup article {
+		justify-content: space-around;
+	}
 }
 /*
 landscape
@@ -1319,7 +1301,10 @@ landscape
 	}
 }
 @media only screen and (min-width: 736px) and (orientation: landscape) {
-
+	#home article {
+		border: 4px solid rgba(255,255,255,1);
+		padding: 3rem;
+	}
 	#works ul li, 
 	#talents-icons li {
 		width: 160px;
@@ -1346,6 +1331,7 @@ ipad
 	}
 	#home article {
 		padding: 3.5rem;
+		border: 7px solid rgba(255,255,255,1);
 	}
 	#home article p span {
 		font-size: 3.5rem;
@@ -1471,6 +1457,31 @@ ipad
 	#works h3 span, #about__text h3 span {
 		font-size: 2.5rem ;
 	}
+	#popup {
+	
+	}
+	#popup article {
+		width: initial;
+		height: initial;
+		max-width: 50%;
+		padding: 5rem 5rem 0 5rem;
+		justify-content: initial;
+	}
+	#popup h6 {
+		font-size: 2em;
+	}
+	#popup p {
+		margin-top: 2em;
+	}
+	#popup__button {
+		margin: 4em auto 0 auto;
+		padding: 1em 2em;
+	}
+	#popup aside {
+		padding: 4rem 0 1rem 0;
+		margin: 0 auto;
+		align-self: flex-end;
+	}
 }
 /*
 ipad pro
@@ -1505,7 +1516,7 @@ ipad pro
 		font-size: 5rem;
 	}
 	#home article a {
-		margin-top: 0.5rem;
+		margin-top: 0rem;
 	}
 	#mouse-icon {
 		width: 50px;
@@ -1602,14 +1613,19 @@ ipad pro
 	}
 	#contact-social li a {
 		margin-left: 1rem;
+		position: relative;
+		top: 0.35rem;
 	}
 	#contact-form input[type=submit],
 	#offers article a,
-	#works a {
+	#works a,
+	#home article a {
 		font-size: 1rem;
 	}
-	#home article a {
-		font-size: 1.4rem;
+	#home article a:hover {
+		font-size: 1.2rem;
+		margin-top: -0.0125rem;
+		margin-left: -0.1rem;
 	}
 	#contact-form input[type=submit] {
 		width: 7rem;
@@ -1618,18 +1634,18 @@ ipad pro
 	#offers article p,
 	#works div > p,
 	#about__text > p {
-		font-size: 1.3rem;
+		font-size: 1.1rem;
 		line-height: 125%;
 	}
 	#talents-testimonials li q,
 	#about__text aside q {
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 	#talents-clients div figcaption p,
 	#offers__list li figcaption p,
 	#about ul li div p {
-		font-size: 1.2rem;
-		line-height: 125%;
+		font-size: 1rem;
+		line-height: 145%;
 	}
 	#about__text aside p,
 	#talents-testimonials li q span {
@@ -1675,8 +1691,11 @@ landscape
     	height: 70vh;
 	}
 }
-@media only screen and (min-width: 1366px) and (orientation: landscape) {
 
+@media only screen and (min-width: 1366px) and (orientation: landscape) {
+	#home article {
+		padding: 2rem;
+	}
 	#offers article {
     	top: 9rem;
 	}
@@ -1695,18 +1714,28 @@ landscape
 	#about__text {
 		margin-right: 2rem;
 	}
+	#about__images img {
+		height: 20vw;
+	}
 	#about__rec-0 {
-		width: 3rem;
-		margin-left: -3rem;
+		width: 2.5rem;
+		margin-left: -2.5rem;
 	}
 	#about__rec-1 {
-		width: 3rem;
+		width: 2.5rem;
 	}
 	#about ul li {
 		padding: 1rem 0;
 	}
 	#about ul li figure {
     	margin: 0 1rem;
+	}
+	#works article figure {
+    	margin-right: 6.5vw;
+	}
+	#works article figure img {
+    	width: 35vw;
+    	height: 35vw;
 	}
 	#works article {
 		margin: 8rem 8rem 4rem 8rem;
@@ -1773,28 +1802,263 @@ landscape
 		top: -12.5%;
 		margin-left: 10rem;
 	}
-
-
-
-
-
 }
 
-@media only screen and (min-width: 1440px) {
+/*
+normal display
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1) { 
+	@media only screen and (min-width: 1440px) {
+			header nav figure {
+				width: 60px;
+			}
+			
+			header nav ul li {
+				font-size: 4rem;
+				margin: 2rem 0;
+			}
+			#home article p {
+	    		font-size: 2rem;
+			}
+			#home article p span {
+			    font-size: 4rem;
+			}
+			#home article a {
+				font-size: 0.8rem;
+			}
+			#home article a:hover {
+				font-size: 0.85rem;
+			}
+			#home__rec-0 {
+				display: initial;
+			}
+			#home__rec-1 {
+				width: 50%;
+				left: 50%;
+			}
+			#home article {
+				box-sizing: border-box;
+				width: 40rem;
+				height: 20rem;
+				margin-left: 20.2rem;
+				padding: 0;
+				position: relative;
+				left: 2.4rem;
+				
+			}
+			#home article div:nth-child(1) {
+				display: flex;
+				background-color: rgba(255,255,255,0.5);
+				box-sizing: border-box;
+				width: 7rem;
+				margin-left: -3rem;
+				z-index: 
+			}
+			#home article div:nth-child(2) {
+				margin-left: 2rem;
+			}
+			#home article div:nth-child(2) div {
+				height: 1.8rem;
+				margin-left: 0rem;
+				margin-top: 2rem;
+			}
+			#home article aside {
+				font-size: 1.2rem;
+				font-weight: 900;
+			}
+			#mouse-icon {
+				margin-left: 51.5px;
+				margin-top: -42.5px;
+				width: 33px;
+    			height: 35px;
+			}
+			#works article figure div { 
+				margin-top: 0.1rem;
+			}
 
-	section {
-		
+			#talents-testimonials {
+	    		width: 70vw;
+	    		display: flex;
+	    		align-content: stretch;
+			}
+			#talents-testimonials li {
+				flex-direction: row;
+				justify-content: flex-start;
+
+			}
+			#talents-testimonials li q {
+	    		font-size: 1rem;
+	    		max-width: 80%;
+			}
+			#talents-testimonials li {
+	    		padding: 0.5rem 1.7rem 0.5rem 0;
+			}
+			#talents-testimonials .image-cropper {
+	    		width: 80px;
+	   			 height: 80px;
+			}
+			#contact-form {
+				height: 82%;
+			}
+			#contact-form input[type=submit] {
+	   			margin: 1.5rem auto 1rem auto;
+			}
 	}
-
-
-
 }
 
+/*
+retina laptop
+*/
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
 
+	@media only screen and (min-width: 1440px) {
+	
+		header nav figure {
+			width: 60px;
+		}
+		header nav ul li {
+			font-size: 4rem;
+			margin: 2rem 0;
+		}
+		#home article p {
+    		font-size: 2rem;
+		}
+		#home article p span {
+		    font-size: 4rem;
+		}
+		#home article a {
+			font-size: 0.8rem;
+		}
+		#home article a:hover {
+			font-size: 0.85rem;
+		}
+		#home__rec-0 {
+			display: initial;
+		}
+		#home__rec-1 {
+			width: 50%;
+			left: 50%;
+		}
+		#home article {
+			box-sizing: border-box;
+			width: 40rem;
+			height: 20rem;
+			margin-left: 20.2rem;
+			padding: 0;
+			position: relative;
+			left: 2.9rem;
+			
+		}
+		#home article div:nth-child(1) {
+			display: flex;
+			background-color: rgba(255,255,255,0.5);
+			box-sizing: border-box;
+			width: 7rem;
+			margin-left: -3rem;
+		}
+		#home article div:nth-child(2) {
+			margin-left: 2rem;
+		}
+		#home article div:nth-child(2) div {
+			height: 1.8rem;
+			margin-left: 0rem;
+			margin-top: 2rem;
+		}
+		#home article aside {
+			font-size: 1.2rem;
+			font-weight: 900;
+		}
+		#mouse-icon {
+			margin-left: 51.5px;
+			margin-top: -42.5px;
+		}
+		#works article figure div { 
+			margin-top: 0.1rem;
+		}
 
+		#talents-testimonials {
+    		width: 70vw;
+    		display: flex;
+    		align-content: stretch;
+		}
+		#talents-testimonials li {
+			flex-direction: row;
+			justify-content: flex-start;
 
+		}
+		#talents-testimonials li q {
+    		font-size: 1rem;
+    		max-width: 80%;
+		}
+		#talents-testimonials li {
+    		padding: 0.5rem 1.7rem 0.5rem 0;
+		}
+		#talents-testimonials .image-cropper {
+    		width: 80px;
+   			 height: 80px;
+		}
+		#contact-form {
+			height: 82%;
+		}
+		#contact-form input[type=submit] {
+   			margin: 1.5rem auto 1rem auto;
+		}
+	}
+}
 
+/*
+large screens
+*/
+@media only screen and (min-width: 1700px) {
 
+	#about__content {
+    	margin: 8rem 22rem;
+	}
+	#about__images {
+    	width: 30vw;
+	}
+	#about__images img {
+		height: 15vw;
+	}
+	#works article {
+    	margin: 8rem 22rem 4rem 22rem;
+	}
+	#works article figure img {
+    	width: 25vw;
+    	height: 25vw;
+	}
+	#offers__list {
+    	width: 50%;
+    	height: 60vh;
+	}
+	#offers__list li {
+    	margin: 1.7rem 10rem;
+	}
+	#offers__background {
+    	width: 50vw;
+    	height: 60vh;
+	}
+	#offers article {
+    	position: relative;
+    	left: 13rem;
+    	top: 0rem;
+    	margin: 4.5rem 10rem;
+    	border: 7px solid rgba(255,255,255,1);
+    	padding: 4rem;
+	}
+	#talents-wrapper {
+    	margin: 8rem 22rem;
+	}
+	#contact-form {
+    	height: 72%;
+	}
+}
 
 
 

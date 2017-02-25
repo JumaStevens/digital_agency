@@ -8,6 +8,8 @@ window.onload = function() {
 	works.addListener();
 	//initiate talents events
 	talents.addListener();
+	//handle button clicks
+	popup.addListener();
 };
 
 //NAVIGATION
@@ -27,6 +29,11 @@ var nav = {
 		nav_icon.addEventListener("click", nav.action, false);
 		//initiate icon
 		nav.hamburger();
+		//add listeners to li(s)
+		const x = nav.navigation.childNodes;
+		for(let i=1;i<x.length;i+=2) {
+			x[i].addEventListener("click", nav.li, false);
+		}
 	},
 
 	//draw hamburger icon
@@ -99,6 +106,13 @@ var nav = {
 				section[i].style.display = "flex";
 			}
 		}
+	},
+
+	//list items handler
+	li: function(value) {
+		//close nav when li is clicked
+		nav.toggle = true;
+		nav.action();
 	}
 };
 
@@ -494,8 +508,8 @@ var talents = {
 	[["photoshop","illustrator","html/css"], ["html/css","javascript","node.js"],
 	["website","email","catalog",], ["creative", "team player", "sales"]],
 	skillset_score:
-	[[30,40,35],[40,50,25],
-	[46,25,25],[29,30,46]],
+	[[30,40,35],[40,42,25],
+	[42,25,25],[29,30,43]],
 
 	//add event listener 
 	addListener: function() {
@@ -638,6 +652,35 @@ var talents = {
 };
 
 
+//POPUP
+var popup = {
+	//add event listeners
+	addListener: function() {
+		//hook
+		const button = document.getElementsByClassName("pop");
+		//add event listeners
+		for(let i=0;i<button.length;i++) {
+			button[i].addEventListener("click", popup.pop, false);
+		}
+	},
+
+	//handle button clicks
+	pop: function(value) {
+		//shorthand
+		const popup = document.getElementById("popup");
+		const x = value.target.innerHTML;
+		//popup on
+		if(x != "close") {
+			//display
+			popup.style.display = "flex";
+		}
+		//popup off
+		else if(x === "close") {
+			//display
+			popup.style.display = "none";
+		}
+	}
+};
 
 
 
